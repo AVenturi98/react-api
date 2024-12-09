@@ -1,0 +1,86 @@
+.navbar,
+.navIT {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding: .5rem;
+    background-color: dodgerblue;
+}
+
+.btnLog {
+    background-color: rgb(111, 226, 121);
+    color: darkblue;
+    padding: .8rem;
+    text-transform: uppercase;
+}
+
+.titleNav {
+    text-shadow: 2px 2px rgba(111, 226, 121, 0.5);
+}
+
+.navItem {
+    color: white;
+    border: .5px solid rgba(221, 221, 221, 0.2);
+    padding: .6rem;
+    border-radius: 10px;
+}
+
+.navItem:hover {
+    background-color: rgba(221, 221, 221, 0.2);
+}
+
+.activeSection {
+    background-color: rgb(111, 226, 121);
+    color: darkblue;
+    padding: .6rem;
+    border-radius: 10px;
+}
+
+.loginBtn {
+    background-color: rgb(111, 226, 121);
+    color: darkblue;
+    padding: 0.8rem;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.formControll {
+    border: none;
+    background-color: rgb(236, 234, 234);
+    margin-bottom: 1rem;
+}
+
+.formControll:not([type='text']) {
+    cursor: pointer;
+}
+
+.formControll:hover:not([type='text']) {
+    background-color: #bebebe;
+}
+
+.navSearchText {
+    width: 100px;
+    transition: .9s ease;
+}
+
+.navSearchText:focus {
+    width: 20rem;
+}
+
+.iconFA {
+    font-size: large;
+    padding: .6rem;
+    border-radius: 40%;
+    border: .5px solid rgba(221, 221, 221, 0.2);
+    background-color: dodgerblue;
+    color: white;
+    margin-bottom: 20px;
+    cursor: pointer;
+    margin-left: 2px;
+}
+
+.iconFA:hover {
+    background-color: rgba(221, 221, 221, 0.2);
+}

@@ -82,7 +82,7 @@ input {
     margin-bottom: 10px;
 }
 
-#button_form {
+#add_button_form {
     background-color: dodgerblue;
     color: white;
     border: none;
@@ -90,7 +90,11 @@ input {
     box-shadow: darkblue 1.5px 3px;
 }
 
-#button_form:active {
+#add_button_form:hover {
+    transform: scale(0.995);
+}
+
+#add_button_form:active {
     transform: scaleY(0.96);
     box-shadow: darkblue 0.5px 1px;
 }
@@ -99,14 +103,6 @@ input {
     display: flex;
     align-items: center;
     gap: 50px;
-}
-
-button {
-    padding: 5px;
-    border-radius: 0.5rem;
-    margin-bottom: 5px;
-    background-color: dodgerblue;
-    color: white;
 }
 
 /* FORM DATA */

@@ -6,7 +6,7 @@ import axios from 'axios'
 
 const initialFormData = {
     title: '',
-    image: undefined,
+    image: '',
     content: '',
     tags: [],
     category: '',
@@ -76,6 +76,7 @@ export default function mainSection() {
     return (
         <>
             <div className="container">
+                <h1>Ricette versatili -</h1>
                 <div className="row">
                     <div className='col-100'>
                         <h3>Inserisci una nuova ricetta</h3>
@@ -111,7 +112,7 @@ export default function mainSection() {
                                 <label htmlFor="avaible" className='formIT formDataCheck' >{formData.published && 'Pubblico' || 'Privato'}</label>
                             </div>
                             <br />
-                            <input type="submit" value="Aggiungi" id='button_form' />
+                            <input type="submit" value="Aggiungi" id='add_button_form' />
                         </form>
                     </div>
                     {posts.map((post) =>
