@@ -67,7 +67,10 @@ export default function mainSection() {
     }
 
     function deletePost(post) {
-        setPosts(posts.filter(el => el !== post))
+        axios.delete(`http://localhost:3232/posts/${post.id}`)
+            .then(res => {
+                setPosts(posts.filter(el => el !== post))
+            })
     }
 
     return (
@@ -116,11 +119,11 @@ export default function mainSection() {
                             <Card callBack={() => deletePost(post)} title={post.title} content={post.content} tags={post.tags} published={post.published !== false} image={post.image} />
                         </div>)}
                 </div >
-                <div className="container">
+                {/* <div className="container">
                     <ul className="row">
                         <Tags />
                     </ul>
-                </div>
+                </div> */}
             </div >
         </>
 
