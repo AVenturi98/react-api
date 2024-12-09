@@ -48,20 +48,22 @@ export default function mainSection() {
         }
     }, [formData.published])
 
-    function addFilm(event) {
+    function addPost(event) {
         event.preventDefault()
-        if (posts.published === false) return setPosts(posts.filter(el => el !== posts))
+        if (posts.published === false) return setPosts(posts.filter(el => el !== posts === false))
 
         const newPost = {
-            id: Date.now(),
+            // id: Date.now(),
             ...formData,
         }
 
-        setPosts([...posts, newPost])
-        setFormData(initialFormData)
-
-        console.log('aggiunto')
-        console.log(formData)
+        axios.post('http://localhost:3232/posts/', newPost)
+            .then(res => {
+                console.log('nuovo post', res)
+                setPosts([...posts, res.data])
+                setFormData(initialFormData)
+            })
+            .catch(err => console.log(err))
     }
 
     function deletePost(post) {
@@ -73,11 +75,8 @@ export default function mainSection() {
             <div className="container">
                 <div className="row">
                     <div className='col-100'>
-
-                        <h3>Inserisci un nuovo film</h3>
-
-                        <form onSubmit={addFilm} className='formData' action="">
-
+                        <h3>Inserisci una nuova ricetta</h3>
+                        <form onSubmit={addPost} className='formData' action="">
                             <div className='formData'>
                                 <label htmlFor="title" className='formIT' >Titolo</label>
                                 <input id='title' name='title' onChange={handleFormData} value={formData.title} type="text" placeholder='Inserisci il titolo' className='formControll' />
