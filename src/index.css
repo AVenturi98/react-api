@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Parkinsans:wght@300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Rubik+Wet+Paint&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Slab", serif;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.container {
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-6 {
+    width: calc(6 * 100% / 12);
+}
+
+/* TAGS  */
+
+.htmlColor {
+    background-color: darksalmon
+}
+
+.cssColor {
+    background-color: dodgerblue
+}
+
+.jsColor {
+    background-color: rgb(253, 188, 22)
+}
+
+.phpColor {
+    background-color: green;
+}
+
+.htmlColor,
+.cssColor,
+.jsColor,
+.phpColor {
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+ul {
+    gap: 10px
+}
+
+/* FORM */
+
+.col-100 {
+    width: 100%;
+    padding: 1.5rem
+}
+
+form>* {
+    margin-top: 1rem;
+}
+
+input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 10px;
+}
+
+#button_form {
+    background-color: dodgerblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: darkblue 1.5px 3px;
+}
+
+#button_form:active {
+    transform: scaleY(0.96);
+    box-shadow: darkblue 0.5px 1px;
+}
+
+.tagsItems {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+button {
+    padding: 5px;
+    border-radius: 0.5rem;
+    margin-bottom: 5px;
+    background-color: dodgerblue;
+    color: white;
+}
+
+/* FORM DATA */
+
+.formData {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formIT {
+    font-weight: bold;
+}
+
+.formDataCheck {
+    padding: 0 .5rem;
+}
+
+.formControll {
+    border: none;
+    background-color: rgb(236, 234, 234);
+}
+
+.text_area {
+    padding: 0.5rem 1.5rem 1.5rem 0.5rem;
+    border-radius: 10px;
+}
+
+.selction {
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.tags_flex {
+    display: flex;
+    flex-wrap: wrap;
+}
