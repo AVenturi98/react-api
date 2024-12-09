@@ -1,7 +1,21 @@
+import { useState } from 'react'
 import style from './Card.module.css'
 import imageDefault from '../../assets/caffe.jpg'
 
-function Card({ title = '', content = '', tags = [], published, image, callBack = () => { } }) {
+function Card({ title = '', content = '', tags = [], published, image, callBack = () => { }, readMore = () => { } }) {
+
+    const [expandedText, setExpandedText] = useState(false)
+
+    const readAbout = (text) => {
+        const words = text.split(" ")
+        return words.slice(0, 20).join(" ") + (words.length > 20 ? "..." : "")
+    }
+
+    function handleToggleText() {
+        setExpandedText(!expandedText)
+    }
+
+
 
     const elementTags = tags.map((tag, elmnTag, className) => {
 
@@ -14,9 +28,6 @@ function Card({ title = '', content = '', tags = [], published, image, callBack 
         return <p key={elmnTag} className={className}>{tag}</p>
     })
 
-
-
-
     return (
         <>
             {published !== false ?
@@ -28,10 +39,12 @@ function Card({ title = '', content = '', tags = [], published, image, callBack 
                         <div className={style.cardBody}>
                             <div className={style.titleCard}>{title}</div>
                             <div className={style.tagsCard}>{elementTags}</div>
-                            <div className={style.descriptionCard}>{content}</div>
+                            <div className={style.descriptionCard}>
+                                {expandedText ? content : readAbout(content)}
+                            </div>
                         </div>
                         <div className={`${style.btnFlex} container`}>
-                            <button className={style.btn}>BUTTON</button>
+                            <button className={style.btn} onClick={handleToggleText}>{!expandedText ? 'Leggi di più' : 'Leggi meno'} </button>
                             <button onClick={callBack} className={style.btnDelete}>DELETE</button>
                         </div>
                     </div >

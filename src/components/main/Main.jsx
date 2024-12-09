@@ -48,6 +48,8 @@ export default function mainSection() {
         }
     }, [formData.published])
 
+
+
     function addPost(event) {
         event.preventDefault()
         if (posts.published === false) return setPosts(posts.filter(el => el !== posts === false))
@@ -68,10 +70,14 @@ export default function mainSection() {
 
     function deletePost(post) {
         axios.delete(`http://localhost:3232/posts/${post.id}`)
-            .then(res => {
+            .then(() => {
                 setPosts(posts.filter(el => el !== post))
             })
     }
+
+    // useEffect(() => {
+    //     alert('ATTENZIONE! Stai per eliminare un elemento')
+    // }, [deletePost])
 
     return (
         <>
@@ -117,7 +123,7 @@ export default function mainSection() {
                     </div>
                     {posts.map((post) =>
                         <div key={post.id} className="col-6">
-                            <Card callBack={() => deletePost(post)} title={post.title} content={post.content} tags={post.tags} published={post.published !== false} image={post.image} />
+                            <Card callBack={() => deletePost(post)} title={post.title} content={post.content} tags={post.tags} published={post.published !== false} image={post.image}> <button >button</button></Card>
                         </div>)}
                 </div >
                 {/* <div className="container">
