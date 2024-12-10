@@ -144,3 +144,29 @@ h2 {
 .iconFA:hover {
     transform: scale(0.98);
 }
+
+/* TOOLTIP */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    font-size: 15px;
+    background-color: rgba(128, 128, 128, 0.2);
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-200%, -50%);
+}
+
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

@@ -6,19 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
 
-// const initialFormData = {
-//     title: '',
-//     image: '',
-//     content: '',
-//     tags: [],
-//     category: '',
-//     published: true
-// }
 
 export default function mainSection() {
 
     const [posts, setPosts] = useState([])
-    // const [formData, setFormData] = useState(initialFormData)
     const [isOpen, setIsOpen] = useState(true)
 
     function fetchPosts() {
@@ -33,42 +24,6 @@ export default function mainSection() {
     useEffect(() => {
         fetchPosts()
     }, [])
-
-    // function handleFormData(e) {
-    //     const key = e.target.name
-    //     const value = e.target.type === "checkbox" ? e.target.checked : e.target.value
-
-    //     const newFormData = {
-    //         ...formData,
-    //         [key]: value
-    //     }
-    //     setFormData(newFormData)
-    // }
-
-    // useEffect(() => {
-    //     if (!formData.published) {
-    //         alert(`Hai reso il tuo post PRIVATO`)
-    //     }
-    // }, [formData.published])
-
-
-
-    // function addPost(event) {
-    //     event.preventDefault()
-    //     if (posts.published === false) return setPosts(posts.filter(el => el !== posts === false))
-
-    //     const newPost = {
-    //         ...formData,
-    //     }
-
-    //     axios.post('http://localhost:3232/posts/', newPost)
-    //         .then(res => {
-    //             console.log('nuovo post', res)
-    //             setPosts([...posts, res.data])
-    //             setFormData(initialFormData)
-    //         })
-    //         .catch(err => console.log(err))
-    // }
 
     function deletePost(post) {
         axios.delete(`http://localhost:3232/posts/${post.id}`)
@@ -87,7 +42,8 @@ export default function mainSection() {
             <div className="container">
                 <div className='flexItem'>
                     <h1>Ricette versatili -</h1>
-                    <button type='button' onClick={openMenu} className={isOpen ? `iconFA` : `iconMin`}> {isOpen ? <FontAwesomeIcon icon={faPlus} /> : <FontAwesomeIcon icon={faMinus} />}</button>
+                    <button type='button' onClick={openMenu} className={isOpen ? `${'iconFA'} ${'tooltip'}` : `iconMin`}> {isOpen ? <FontAwesomeIcon icon={faPlus} /> : <FontAwesomeIcon icon={faMinus} />}
+                        <span className={isOpen ? 'tooltiptext' : `d-none`}>Aggiungi</span></button>
                 </div>
                 <div className="row">
                     <div className={isOpen ? 'd-none' : 'col-100'}>
