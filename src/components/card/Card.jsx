@@ -2,7 +2,7 @@ import { useState } from 'react'
 import style from './Card.module.css'
 import imageDefault from '../../assets/caffe.jpg'
 
-function Card({ title = '', content = '', tags = [], published, image, callBack = () => { }, readMore = () => { } }) {
+function Card({ title = '', content = '', tags = [], published, image, callBack = () => { } }) {
 
     const [expandedText, setExpandedText] = useState(false)
 
@@ -17,16 +17,7 @@ function Card({ title = '', content = '', tags = [], published, image, callBack 
 
 
 
-    const elementTags = tags.map((tag, elmnTag, className) => {
-
-        if (tag === 'html') className = 'htmlColor'
-        if (tag === 'css') className = 'cssColor'
-        if (tag === 'js') className = 'jsColor'
-        if (tag === 'php') className = 'phpColor'
-
-
-        return <p key={elmnTag} className={className}>{tag}</p>
-    })
+    const elementTags = tags.map(tag => tag)
 
     return (
         <>
@@ -38,7 +29,7 @@ function Card({ title = '', content = '', tags = [], published, image, callBack 
                         </div>
                         <div className={style.cardBody}>
                             <div className={style.titleCard}>{title}</div>
-                            <div className={style.tagsCard}>{elementTags}</div>
+                            <div className={style.tagsCard}>{elementTags.join(' - ')}</div>
                             <div className={style.descriptionCard}>
                                 {expandedText ? content : readAbout(content)}
                             </div>
@@ -49,7 +40,7 @@ function Card({ title = '', content = '', tags = [], published, image, callBack 
                         </div>
                     </div >
                 </main > :
-                <div className={style.dNone} />
+                ''
             }
         </>
     )

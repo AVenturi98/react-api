@@ -105,38 +105,42 @@ input {
     gap: 50px;
 }
 
-/* FORM DATA */
+/* MOBILE MENU */
 
-.formData {
+h2 {
+    margin-bottom: 1.5rem;
+}
+
+.flexItem {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0 5rem 0;
 }
 
-.formIT {
-    font-weight: bold;
+.d-none {
+    display: none;
 }
 
-.formDataCheck {
-    padding: 0 .5rem;
-}
-
-.formControll {
+.iconFA {
+    font-size: 30px;
+    padding: .6rem .9rem;
+    border-radius: 40%;
     border: none;
-    background-color: rgb(236, 234, 234);
+    background-color: rgb(111, 226, 121);
+    cursor: pointer;
 }
 
-.text_area {
-    padding: 0.5rem 1.5rem 1.5rem 0.5rem;
-    border-radius: 10px;
+.iconMin {
+    background-color: rgba(92, 91, 91, 0.2);
+    font-size: 30px;
+    padding: .6rem .9rem;
+    border-radius: 40%;
+    border: none;
+    cursor: pointer;
 }
 
-.selction {
-    padding: 0.5rem;
-    border-radius: 10px;
-}
-
-.tags_flex {
-    display: flex;
-    flex-wrap: wrap;
+.iconMin :hover,
+.iconFA:hover {
+    transform: scale(0.98);
 }

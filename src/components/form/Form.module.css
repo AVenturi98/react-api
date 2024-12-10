@@ -1,0 +1,35 @@
+/* FORM DATA */
+
+.formData {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formIT {
+    font-weight: bold;
+}
+
+.formDataCheck {
+    padding: 0 .5rem;
+}
+
+.formControll {
+    border: none;
+    background-color: rgb(236, 234, 234);
+}
+
+.text_area {
+    padding: 0.5rem 1.5rem 1.5rem 0.5rem;
+    border-radius: 10px;
+}
+
+.selction {
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.tags_flex {
+    display: flex;
+    flex-wrap: wrap;
+}
