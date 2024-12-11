@@ -18,7 +18,7 @@ export default function mainSection() {
                 console.log('posts', res)
                 setPosts(res.data)
             })
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }
 
     useEffect(() => {
@@ -30,7 +30,7 @@ export default function mainSection() {
             .then(() => {
                 setPosts(posts.filter(el => el !== post))
             })
-            .catch((err) => console.log(err))
+            .catch((err) => console.error(err))
     }
 
     function openMenu() {
@@ -52,7 +52,7 @@ export default function mainSection() {
                     </div>
                     {posts.map((post) =>
                         <div key={post.id} className="col-6">
-                            <Card callBack={() => deletePost(post)} title={post.title} content={post.content} tags={post.tags} published={post.published} image={post.image} />
+                            <Card callBack={() => deletePost(post)} title={post.title} content={post.content} tags={post.tags} published={post.published} image={post.image} id={post.id} />
                         </div>
                     )}
                 </div >

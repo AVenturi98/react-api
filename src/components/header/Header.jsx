@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import style from './Header.module.css'
+import { NavLink } from 'react-router-dom'
+//fontAwesome
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -23,13 +25,16 @@ function Header() {
                         <h1 className={style.titleNav}>IlMioBlog</h1>
                     </li>
                     <li >
-                        <a href="../../../index.html" className={`${style.navItem} ${style.activeSection}`}>Home</a>
+                        <NavLink to='/' className={style.navItem}>Home</NavLink>
                     </li>
-                    <li className={style.navItem}>
-                        <a href="#">Salato</a>
+                    <li >
+                        <NavLink to='/list' className={style.navItem}>Menù</NavLink>
                     </li>
-                    <li className={style.navItem}>
-                        <a href="#">Dolce</a>
+                    <li >
+                        <NavLink to='/salt' className={style.navItem}>Salato</NavLink>
+                    </li>
+                    <li >
+                        <NavLink to='/sweet' className={style.navItem}>Dolce</NavLink>
                     </li>
                 </ul>
                 <ul className={style.navIT}>
@@ -45,7 +50,7 @@ function Header() {
                     </li>
                 </ul>
 
-            </header>
+            </header >
 
         </>
     )

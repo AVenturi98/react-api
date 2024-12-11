@@ -9,33 +9,18 @@
     background-color: dodgerblue;
 }
 
-.btnLog {
-    background-color: rgb(111, 226, 121);
-    color: darkblue;
-    padding: .8rem;
-    text-transform: uppercase;
-}
-
 .titleNav {
     text-shadow: 2px 2px rgba(111, 226, 121, 0.5);
 }
 
 .navItem {
     color: white;
-    border: .5px solid rgba(221, 221, 221, 0.2);
-    padding: .6rem;
+    padding: .8rem;
     border-radius: 10px;
 }
 
 .navItem:hover {
     background-color: rgba(221, 221, 221, 0.2);
-}
-
-.activeSection {
-    background-color: rgb(111, 226, 121);
-    color: darkblue;
-    padding: .6rem;
-    border-radius: 10px;
 }
 
 .loginBtn {

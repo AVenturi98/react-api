@@ -12,6 +12,13 @@ a {
     text-decoration: none;
 }
 
+a.active {
+    background-color: rgb(111, 226, 121);
+    color: darkblue;
+    padding: .8rem;
+    border-radius: 10px;
+}
+
 ul,
 ol {
     list-style: none;

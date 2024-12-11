@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { NavLink, Link, useParams } from 'react-router-dom'
 import style from './Card.module.css'
 import imageDefault from '../../assets/caffe.jpg'
 
-function Card({ title = '', content = '', tags = [], published, image, callBack = () => { } }) {
+function Card({ id = '', title = '', content = '', tags = [], published, image, callBack = () => { } }) {
 
     const [expandedText, setExpandedText] = useState(false)
 
@@ -14,8 +15,6 @@ function Card({ title = '', content = '', tags = [], published, image, callBack 
     function handleToggleText() {
         setExpandedText(!expandedText)
     }
-
-
 
     const elementTags = tags.map(tag => tag)
 
@@ -32,11 +31,12 @@ function Card({ title = '', content = '', tags = [], published, image, callBack 
                             <div className={style.tagsCard}>{elementTags.join(' - ')}</div>
                             <div className={style.descriptionCard}>
                                 {expandedText ? content : readAbout(content)}
+                                <span><button className={style.btn} onClick={handleToggleText}>{!expandedText ? 'Leggi di più' : 'Leggi meno'} </button></span>
                             </div>
                         </div>
                         <div className={`${style.btnFlex} container`}>
-                            <button className={style.btn} onClick={handleToggleText}>{!expandedText ? 'Leggi di più' : 'Leggi meno'} </button>
                             <button onClick={callBack} className={style.btnDelete}>DELETE</button>
+                            <Link to={`http://localhost:3232/posts/${id}`}>Vai al post</Link>
                         </div>
                     </div >
                 </main > :
